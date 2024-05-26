@@ -110,7 +110,10 @@
             <div class="form-group">
                 <button type="submit">Log In</button>
             </div>
-        </form>
+            @if(Auth::check() && Auth::user()->is_admin)
+                <p>You are an admin! <a href="{{ route('admin.index') }}">Go to admin dashboard</a></p>
+            @endif
+        </form> 
     </div>
 </body>
 </html>

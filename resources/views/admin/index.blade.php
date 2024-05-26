@@ -66,7 +66,10 @@
             justify-self: start;
         }
         .fa{
+            background: transparent;
+            border: none;
             margin-left: 30vw;
+            color: #fff;
         }
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -77,16 +80,15 @@
         <img src="https://res.cloudinary.com/dq11ayv02/image/upload/v1716717495/project-pemweb/wm1p31ly4jzn1xleizsp.png" alt="Logo" class="logo">
         <a href="/dashboard">Home</a>
         <a href="#">Slip Gaji</a>
-        <a href="#">Profil Karyawan</a>
+        <a href="#">Daftar Karyawan</a>
         <form method="POST" action="/logout">
         @csrf
             <button type="submit" class="fa fa-power-off"></button>
         </form>
-        <a method="POST" action="/logout" class="fa fa-power-off"></a>
     </div>
     <div class="container">
         <div class="content">
-            <h2>Selamat Datang, {{ $user->nama }}!</h2>
+            <h2>Selamat Datang, Admin {{ $user->nama }}!</h2>
             <p>Situs Slip Gaji PT. MAS Tours and Travel</p>
             <a href="#" class="btn">Lihat Slip</a>
         </div>

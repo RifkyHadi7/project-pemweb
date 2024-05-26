@@ -25,7 +25,7 @@ class LoginController extends Controller
 
         if ($karyawan && $karyawan->id == $request->id) {
             Auth::loginUsingId($karyawan->id);
-            return redirect()->intended('dashboard');
+            return redirect()->intended('dashboard');  
         } else {
             return back()->withErrors(['nama' => 'Nama atau ID salah']);
         }
