@@ -79,8 +79,8 @@
     <div class="navbar">
         <img src="https://res.cloudinary.com/dq11ayv02/image/upload/v1716717495/project-pemweb/wm1p31ly4jzn1xleizsp.png" alt="Logo" class="logo">
         <a href="/dashboard">Home</a>
-        <a href="#">Slip Gaji</a>
-        <a href="#">Daftar Karyawan</a>
+        <a href="/slipgaji">Slip Gaji</a>
+        <a href="/karyawan">Daftar Karyawan</a>
         <form method="POST" action="/logout">
         @csrf
             <button type="submit" class="fa fa-power-off"></button>

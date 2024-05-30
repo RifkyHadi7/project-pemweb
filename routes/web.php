@@ -1,10 +1,13 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Http\Request;
 
 use App\Http\Controllers\KaryawanAsliController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\SlipgajiController;
 
 Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
 Route::post('/login', [LoginController::class, 'login']);
@@ -17,3 +20,5 @@ Route::get('/karyawan', [KaryawanAsliController::class, 'index']);
 Route::get('/', function () {
     return redirect('/login');
 });
+
+Route::get('/slipgaji', [SlipgajiController::class, 'index']);

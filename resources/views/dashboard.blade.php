@@ -66,7 +66,10 @@
             justify-self: start;
         }
         .fa{
+            background: transparent;
+            border: none;
             margin-left: 30vw;
+            color: #fff;
         }
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -82,7 +85,6 @@
         @csrf
             <button type="submit" class="fa fa-power-off"></button>
         </form>
-        <a method="POST" action="/logout" class="fa fa-power-off"></a>
     </div>
     <div class="container">
         <div class="content">

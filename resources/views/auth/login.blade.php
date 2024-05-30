@@ -29,7 +29,7 @@
             display: flex;
             flex-direction: column;
             max-width: 500px;
-            margin: 20vh 33vw;
+            margin: 20vh 35vw;
             padding: 20px;
             background-color: transparent;
         }
