@@ -8,6 +8,8 @@ use App\Http\Controllers\KaryawanAsliController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\SlipgajiController;
+use App\Http\Controllers\ProfileController;
+
 
 Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
 Route::post('/login', [LoginController::class, 'login']);
@@ -22,3 +24,5 @@ Route::get('/', function () {
 });
 
 Route::get('/slipgaji', [SlipgajiController::class, 'index']);
+
+Route::get('/profile', [ProfileController::class, 'index'])->middleware('auth');
