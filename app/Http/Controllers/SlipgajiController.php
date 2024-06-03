@@ -22,4 +22,11 @@ class SlipgajiController extends Controller
         } 
        
     }
+
+    public function destroy($id, $slipgaji_id)
+    {
+        $table_name = "slipgaji_{$id}";
+        DB::table($table_name)->where('id', $slipgaji_id)->delete();;
+        return redirect()->back()->with('success', 'Slip gaji berhasil dihapus');
+    }
 }

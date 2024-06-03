@@ -23,6 +23,8 @@ Route::get('/', function () {
 Route::get('/kirimslip', [KirimSlipController::class, 'index'])->middleware('auth');
 Route::get('/slipgaji', [SlipgajiController::class, 'index'])->middleware('auth');
 
+Route::delete('/slipgaji/{id}/{slipgaji_id}', [SlipgajiController::class, 'destroy'])->middleware('auth');
+
 Route::get('/profile', [ProfileController::class, 'index'])->middleware('auth');
 
 Route::get('/profil/{id}', [KaryawanAsliController::class, 'profil'])->middleware('auth');

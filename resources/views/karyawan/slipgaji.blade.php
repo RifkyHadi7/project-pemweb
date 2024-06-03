@@ -197,6 +197,13 @@
             <td>{{ $slipGaji->tahun }}</td>
             <td>{{ $slipGaji->bulan }}</td>
             <td><a href="{{ $slipGaji->slip_gaji }}" target="_blank">Lihat Slip Gaji</a></td>
+            <td>
+                <form method="POST" action="/slipgaji/{{$id}}/{{ $slipGaji->id }}">
+                    @csrf
+                    @method('DELETE')
+                    <button type="submit" class="btn btn-danger">Hapus</button>
+                </form>
+            </td>
         </tr>
         @endforeach
     </table>

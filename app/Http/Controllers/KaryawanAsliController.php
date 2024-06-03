@@ -32,7 +32,7 @@ class KaryawanAsliController extends Controller
         $user = Auth::user();
         if($user->admin){
             $slipGajis = DB::table($tableName)->get();
-            return view('karyawan.slipgaji', compact('slipGajis'));
+            return view('karyawan.slipgaji', compact('slipGajis', 'id'));
         }
     }
     public function edit($id)
