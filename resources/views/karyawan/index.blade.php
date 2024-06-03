@@ -207,6 +207,12 @@
             align-items: center;
             justify-content: center;
             text-align: center;
+        } 
+        .logo {
+            height: 30px;
+            margin-right: 30vw;
+            float: left;
+            justify-self: start;
         }
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -214,13 +220,15 @@
     <link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'>
 </head>
 <body>
-<div class="navbar1">
-        <img src="https://res.cloudinary.com/dq11ayv02/image/upload/v1716717495/project-pemweb/wm1p31ly4jzn1xleizsp.png" alt="Logo" class="logo1">
+    <div class="navbar1">
+        <img src="https://res.cloudinary.com/dq11ayv02/image/upload/v1716717495/project-pemweb/wm1p31ly4jzn1xleizsp.png" alt="Logo" class="logo">
         <a href="/dashboard">Home</a>
-        <a href="#">Slip Gaji</a>
+        <a href="/kirimslip">Kirim Slip Gaji</a>
+        <a href="/slipgaji">Slip Gaji</a>
+        <a href="/profile">Profil Karyawan</a>
         <a href="/karyawan">Daftar Karyawan</a>
         <form method="POST" action="/logout">
-            @csrf
+        @csrf
             <button type="submit" class="fa fa-power-off"></button>
         </form>
     </div>

@@ -70,31 +70,50 @@
         .profile-img i {
             color: #333;
         }
+        .navbar {
+            display: flex;
+            justify-content: center;
+            overflow: hidden;
+            padding: 10px;
+        }
+        .navbar a {
+            float: left;
+            color: #fff;
+            text-align: center;
+            padding: 10px 16px;
+            text-decoration: none;
+        }
+        .navbar a:hover {
+            color: #E52996;
+            opacity: 83%;
+        }
+        .logo {
+            height: 30px;
+            margin-right: 30vw;
+            float: left;
+            justify-self: start;
+        }
+        .fa{
+            background: transparent;
+            border: none;
+            margin-left: 30vw;
+            color: #fff;
+        }
     </style>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container">
-            <a class="navbar-brand" href="#">MAS</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Lihat Slip</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Arsip Slip Gaji</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-
+    <div class="navbar">
+        <img src="https://res.cloudinary.com/dq11ayv02/image/upload/v1716717495/project-pemweb/wm1p31ly4jzn1xleizsp.png" alt="Logo" class="logo">
+        <a href="/dashboard">Home</a>
+        <a href="/kirimslip">Kirim Slip Gaji</a>
+        <a href="/slipgaji">Slip Gaji</a>
+        <a href="/profile">Profil Karyawan</a>
+        <a href="/karyawan">Daftar Karyawan</a>
+        <form method="POST" action="/logout">
+        @csrf
+            <button type="submit" class="fa fa-power-off"></button>
+        </form>
+    </div>
     <div class="container">
         <div class="row">
             <div class="col-md-4 col-sm-6 mb-4">

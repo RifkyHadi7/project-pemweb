@@ -133,6 +133,35 @@
             width: 100%; /* or a specific width, e.g., 649px */
             height: 100vh; /* or a specific height */
         }
+        .navbar {
+            display: flex;
+            justify-content: center;
+            overflow: hidden;
+            padding: 10px;
+        }
+        .navbar a {
+            float: left;
+            color: #fff;
+            text-align: center;
+            padding: 10px 16px;
+            text-decoration: none;
+        }
+        .navbar a:hover {
+            color: #E52996;
+            opacity: 83%;
+        }
+        .logo {
+            height: 30px;
+            margin-right: 30vw;
+            float: left;
+            justify-self: start;
+        }
+        .fa{
+            background: transparent;
+            border: none;
+            margin-left: 30vw;
+            color: #fff;
+        }
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
@@ -142,10 +171,12 @@
     <div class="navbar">
         <img src="https://res.cloudinary.com/dq11ayv02/image/upload/v1716717495/project-pemweb/wm1p31ly4jzn1xleizsp.png" alt="Logo" class="logo">
         <a href="/dashboard">Home</a>
+        <a href="/kirimslip">Kirim Slip Gaji</a>
         <a href="/slipgaji">Slip Gaji</a>
+        <a href="/profile">Profil Karyawan</a>
         <a href="/karyawan">Daftar Karyawan</a>
         <form method="POST" action="/logout">
-            @csrf
+        @csrf
             <button type="submit" class="fa fa-power-off"></button>
         </form>
     </div>
