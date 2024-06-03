@@ -113,8 +113,8 @@
                     </div>
                     <div class="card-footer">
                         <p class="card-text">Lihat Arsip Gaji</p>
-                        <a href="/slipgaji" class="btn btn-primary">Arsip Gaji</a>
-                        <a href="#" class="btn btn-danger">Hapus Karyawan</a>
+                        <a href="{{ url('/slipgaji/'. $user->id) }}" class="btn btn-primary">Arsip Gaji</a>
+                        <a href="{{ url('/profil/'. $user->id). '/edit' }}" class="btn btn-danger">Edit Karyawan</a>
                     </div>
                 </div>
             </div>

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MAS - Karyawan</title>
+    <title>MAS - Edit Karyawan</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
     <style>
@@ -100,28 +100,30 @@
             <div class="col-md-4 col-sm-6 mb-4">
                 <div class="card">
                     <div class="card-header">
-                        <div class="profile-img">
-                            <img src={{$user->foto}} alt=""></img>
-                        </div>
-                        <h5 class="card-title">{{$user->nama}}</h5>
-                        <p class="card-text">ID Karyawan: {{$user->id}}</p>
+                        <h5 class="card-title">Edit Karyawan</h5>
                     </div>
                     <div class="card-body">
-                        <p class="card-text">Nama Lengkap: {{$user->nama}}</p>
-                        <p class="card-text">Tempat, Tanggal Lahir: {{$user->ttl}}</p>
-                        <p class="card-text">Jabatan: {{$user->jabatan}}</p>
-                    </div>
-                    <div class="card-footer">
-                        <p class="card-text">Lihat Arsip Gaji</p>
-                        <a href="/slipgaji" class="btn btn-primary">Arsip Gaji</a>
-                        <a href="#" class="btn btn-danger">Hapus Karyawan</a>
+                        <form>
+                            <div class="form-group">
+                                <label for="nama">Nama Lengkap</label>
+                                <input type="text" class="form-control" id="nama" value="{{$karyawan->nama}}">
+                            </div>
+                            <div class="form-group">
+                                <label for="ttl">Tempat, Tanggal Lahir</label>
+                                <input type="text" class="form-control" id="ttl" value="{{$karyawan->ttl}}">
+                            </div>
+                            <div class="form-group">
+                                <label for="jabatan">Jabatan</label>
+                                <input type="text" class="form-control" id="jabatan" value="{{$karyawan->jabatan}}">
+                            </div>
+                            <div class="form-group">
+                                <label for="foto">Foto</label>
+                                <input type="text" class="form-control" id="foto" value="{{$karyawan->foto}}">
+                            </div>
+                            <button type="submit" class="btn btn-primary">Simpan Perubahan</button>
+                        </form>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"></script>
-</body>
-</html>

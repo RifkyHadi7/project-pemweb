@@ -246,7 +246,7 @@
                         <td class="align-top typotd">{{ $karyawan->jabatan }}</td>
                         <td class="align-top typotd">{{ $karyawan->ttl }}</td>
                         <td>
-                            <a class="typolihat stylelihat" href="/profil/$karyawan->id">Lihat Profil</a>
+                            <a class="typolihat stylelihat" href="{{ url('/profil/'. $karyawan->id) }}">Lihat Profil</a>
                         </td>
                     </tr>
                     @endforeach
