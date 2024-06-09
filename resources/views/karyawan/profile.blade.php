@@ -19,36 +19,30 @@
 
         .navbar {
             display: flex;
-            justify-content: center;
-            overflow: hidden;
+            justify-content: space-between;
+            align-items: center;
+            background-color: transparent;
             padding: 10px;
+            flex-wrap: wrap;
         }
-
         .navbar a {
-            float: left;
             color: #fff;
             text-align: center;
             padding: 10px 16px;
             text-decoration: none;
         }
-
         .navbar a:hover {
             color: #E52996;
             opacity: 83%;
         }
-
         .logo {
             height: 30px;
-            margin-right: 30vw;
-            float: left;
-            justify-self: start;
         }
-
         .fa {
             background: transparent;
             border: none;
-            margin-left: 30vw;
             color: #fff;
+            cursor: pointer;
         }
 
         .card {
@@ -219,18 +213,20 @@
 </head>
 
 <body>
-    <div class="navbar">
-        <img src="https://res.cloudinary.com/dq11ayv02/image/upload/v1716717495/project-pemweb/wm1p31ly4jzn1xleizsp.png" alt="Logo" class="logo">
+<div class="navbar">
+    <img src="https://res.cloudinary.com/dq11ayv02/image/upload/v1716717495/project-pemweb/wm1p31ly4jzn1xleizsp.png" alt="Logo" class="logo">
+    <div class="navbar-links">
         <a href="/dashboard">Home</a>
         <a href="/kirimslip">Kirim Slip Gaji</a>
         <a href="/slipgaji">Slip Gaji</a>
         <a href="/profile">Profil Karyawan</a>
         <a href="/karyawan">Daftar Karyawan</a>
-        <form method="POST" action="/logout">
-            @csrf
-            <button type="submit" class="fa fa-power-off"></button>
-        </form>
     </div>
+    <form method="POST" action="/logout">
+        @csrf
+        <button type="submit" class="fa fa-power-off"></button>
+    </form>
+</div>
     <h2 class="h2heading container-fluid">Profil</h2>
     <div class="container">
         <div class="row justify-content-center">
@@ -247,7 +243,7 @@
                             <p class="card-text">Jabatan: {{$user->jabatan}}</p>
                         </div>
                     </div>
-                    <a href="{{ url('/slipgaji/'. $user->id) }}" class="btn btn-primary">Arsip Gaji</a>
+                    <a href="{{ url('slipgaji/'. $user->id)}}" class="btn btn-primary">Arsip Gaji</a>
                 </div>
             </div>
         </div>

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Composer;
 use Illuminate\Support\Facades\Auth;
 
 class ProfileController extends Controller{
@@ -15,6 +16,10 @@ class ProfileController extends Controller{
     public function index()
     {
         $user = Auth::user();
-        return view('profile', compact('user'));
+        if($user->admin){
+            return view('admin.profile', compact('user'));
+        } else {
+            return view('profile', compact('user'));
+        }
     }
 }

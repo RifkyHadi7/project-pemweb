@@ -19,13 +19,14 @@
 
         .navbar {
             display: flex;
-            justify-content: center;
-            overflow: hidden;
+            justify-content: space-between;
+            align-items: center;
+            background-color: transparent;
             padding: 10px;
+            flex-wrap: wrap;
         }
 
         .navbar a {
-            float: left;
             color: #fff;
             text-align: center;
             padding: 10px 16px;
@@ -39,16 +40,13 @@
 
         .logo {
             height: 30px;
-            margin-right: 30vw;
-            float: left;
-            justify-self: start;
         }
 
         .fa {
             background: transparent;
             border: none;
-            margin-left: 30vw;
             color: #fff;
+            cursor: pointer;
         }
 
         .card {
@@ -112,13 +110,13 @@
         }
 
         .profile-card {
-            width: 739px;
-            height: 365px;
+            width: 100%;
+            max-width: 739px;
+            height: auto;
             flex-shrink: 0;
             border-radius: 41px;
             background: var(--Card-highlighten-background, linear-gradient(180deg, rgba(255, 255, 255, 0.09) 0%, rgba(255, 255, 255, 0.03) 100%));
-            margin: 40px auto 0 auto;
-            /* Added margin-top */
+            margin: 40px auto;
             position: relative;
             padding: 20px;
         }
@@ -160,7 +158,6 @@
             align-items: center;
             justify-content: space-between;
             margin-bottom: 1rem;
-            /* add some margin bottom to separate from the image */
         }
 
         .profile-info img {
@@ -169,9 +166,7 @@
 
         .profile-info div {
             flex: 1;
-            /* make the div take up the remaining space */
             padding-left: 20px;
-            /* add some padding to separate from the image */
         }
 
         .edit-link {
@@ -193,25 +188,59 @@
         }
 
         .h2heading {
-            display: flex;
-            padding: 20px;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            text-align: center;
-            white-space: nowrap;
-            width: 649px;
             font-family: Inter;
-            font-size: 92px;
-            font-style: normal;
+            font-size: 10vw;
             font-weight: 800;
-            line-height: 110%;
-            /* 101.2px */
+            line-height: 1;
             text-transform: capitalize;
-            background: var(--Gradient-Headings, linear-gradient(180deg, #FFF 0.35%, rgba(255, 255, 255, 0.38) 122.8%));
+            background: linear-gradient(180deg, #FFF 0.35%, rgba(255, 255, 255, 0.38) 122.8%);
             background-clip: text;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        @media screen and (min-width: 768px) {
+            .h2heading {
+                font-size: 4rem;
+            }
+
+            .profile-info {
+                flex-direction: row;
+                align-items: center;
+                justify-content: flex-start;
+            }
+
+            .profile-info img {
+                margin-right: 20px;
+            }
+
+            .profile-info div {
+                padding-left: 0;
+            }
+        }
+
+        @media screen and (max-width: 767px) {
+            .profile-info {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .profile-info img {
+                margin-right: 0;
+                margin-bottom: 20px;
+            }
+
+            .profile-info div {
+                padding-left: 0;
+            }
+
+            .profile-card .btn-primary {
+                position: static;
+                margin-top: 20px;
+            }
         }
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -221,22 +250,24 @@
 <body>
     <div class="navbar">
         <img src="https://res.cloudinary.com/dq11ayv02/image/upload/v1716717495/project-pemweb/wm1p31ly4jzn1xleizsp.png" alt="Logo" class="logo">
-        <a href="/dashboard">Home</a>
-        <a href="/kirimslip">Kirim Slip Gaji</a>
-        <a href="/slipgaji">Slip Gaji</a>
-        <a href="/profile">Profil Karyawan</a>
-        <a href="/karyawan">Daftar Karyawan</a>
+        <div class="navbar-links">
+            <a href="/dashboard">Home</a>
+            <a href="/kirimslip">Kirim Slip Gaji</a>
+            <a href="/slipgaji">Slip Gaji</a>
+            <a href="/profile">Profil Karyawan</a>
+            <a href="/karyawan">Daftar Karyawan</a>
+        </div>
         <form method="POST" action="/logout">
             @csrf
             <button type="submit" class="fa fa-power-off"></button>
         </form>
     </div>
-    <h2 class="h2heading container-fluid">Profil</h2>
+    <h2 class="h2heading">Profil</h2>
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="profile-card">
-                    <a href="#" class="edit-link">Edit</a>
+                    <a href="{{ url('/profil/'. $user->id). '/edit' }}" class="edit-link">Edit</a>
                     <div class="profile-info">
                         <img src="{{$user->foto}}" alt="Profile Image">
                         <div>
